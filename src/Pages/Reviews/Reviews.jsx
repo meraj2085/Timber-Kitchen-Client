@@ -1,9 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/UserContext";
+import ReviewsCard from "./ReviewsCard";
 
 const Reviews = ({ service }) => {
+const [reviews, setReviews] = useState([])
   const { name, _id } = service;
   const { user } = useContext(AuthContext);
 
@@ -36,6 +38,12 @@ const Reviews = ({ service }) => {
         }
       });
   };
+
+  useEffect(()=>{
+     fetch('http://localhost:5000/reviews')
+     .then(res => res.json())
+     .then(data => setReviews(data))
+  }, [])
 
   return (
     <div className="lg:flex justify-between mx-20 my-20">
@@ -133,44 +141,7 @@ const Reviews = ({ service }) => {
         )}
       </div>
       <div className="grid grid-cols-1 gap-5">
-        <div className="max-w-lg p-4 shadow-md bg-gray-50 text-gray-800">
-          <div className="space-y-4">
-            <div className="space-y-2">
-              <div className="flex">
-                <img
-                  className="w-10 h-10"
-                  src="https://i.pinimg.com/474x/f4/8d/26/f48d2639982101005f924f2038364055.jpg"
-                  alt=""
-                />
-                <p className="mx-3 flex items-center text-2xl">Aiana</p>
-              </div>
-              <p className="leading-snug text-gray-600">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Repellat, excepturi. Lorem ipsum dolor sit amet consectetur,
-                adipisicing elit. Repellat, excepturi.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="max-w-lg p-4 shadow-md bg-gray-50 text-gray-800">
-          <div className="space-y-4">
-            <div className="space-y-2">
-              <div className="flex">
-                <img
-                  className="w-10 h-10"
-                  src="https://i.pinimg.com/474x/f4/8d/26/f48d2639982101005f924f2038364055.jpg"
-                  alt=""
-                />
-                <p className="mx-3 flex items-center text-2xl">Aiana</p>
-              </div>
-              <p className="leading-snug text-gray-600">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Repellat, excepturi. Lorem ipsum dolor sit amet consectetur,
-                adipisicing elit. Repellat, excepturi.
-              </p>
-            </div>
-          </div>
-        </div>
+        {reviews.map(review => <ReviewsCard key={review._id} review={review}></ReviewsCard>)}
       </div>
     </div>
   );
