@@ -3,19 +3,19 @@ import { AuthContext } from "../../../Contexts/UserContext";
 
 const SocialLogin = () => {
   const { googleSignIn } = useContext(AuthContext);
-  const handleUserGoogleLogin = ()=>{
-     googleSignIn()
-     .then(result => {
-          const user = result.user;
-          console.log(user);
-     })
-     .catch(err => console.error(err.message))
-  }
-  
+  const handleUserGoogleSignIn = () => {
+    googleSignIn()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((err) => console.error(err.message));
+  };
+
   return (
     <div>
       <button
-      onClick={handleUserGoogleLogin}
+        onClick={handleUserGoogleSignIn}
         aria-label="Log in with Google"
         className="p-3 flex text-center rounded-sm"
       >
