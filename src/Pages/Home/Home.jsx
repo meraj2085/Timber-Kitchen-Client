@@ -1,31 +1,32 @@
-import React from 'react';
+import React from "react";
+import cooking from "../../assets/undraw_cooking.svg";
 
 const Home = () => {
-     return (
-          <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+  return (
+    <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <div className="flex flex-col items-center justify-between w-full mb-10 lg:flex-row">
         <div className="mb-16 lg:mb-0 lg:max-w-lg lg:pr-5">
-          <div className="max-w-xl mb-6">
+          <div className="mb-6">
             <h2 className="font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none max-w-lg mb-6">
-              Everything you
+              Commercial kitchens
               <br className="hidden md:block" />
-              can imagine{' '}
-              <span className="inline-block text-deep-purple-accent-400">is real</span>
+              built for personalized delivery{" "}
             </h2>
-            <p className="text-gray-700 text-base md:text-lg">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. explicabo.</p>
+            <p className="text-gray-700 text-base md:text-lg">
+              I am a professional home chef. Committed to provide best meal for you in minimal time.
+              I have been cooking for 15 years & worked with several renowned restaurants.
+              Now i myself will cook personally for you and provide you your personal dish.
+            </p>
           </div>
         </div>
         <div className="flex items-center justify-center lg:w-1/2">
-          <div className="w-2/5">
-            <img className="object-cover" src="https://kitwind.io/assets/kometa/one-girl-phone.png" alt="" />
-          </div>
-          <div className="w-5/12 -ml-16 lg:-ml-32">
-            <img className="object-cover" src="https://kitwind.io/assets/kometa/two-girls-phone.png" alt="" />
+          <div className="w-8/12">
+            <img className="object-cover" src={cooking} alt="" />
           </div>
         </div>
       </div>
     </div>
-     );
+  );
 };
 
 export default Home;
