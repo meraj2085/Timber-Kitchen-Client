@@ -7,7 +7,7 @@ import ReviewsCard from "./ReviewsCard";
 const Reviews = ({ service }) => {
 const [reviews, setReviews] = useState([])
 const [toggle, setToggle] = useState(true)
-  const { name, _id } = service;
+  const { name, _id, img } = service;
   const { user } = useContext(AuthContext);
 
   const handleReview = (event) => {
@@ -23,6 +23,7 @@ const [toggle, setToggle] = useState(true)
       userImg,
       email,
       productName: name,
+      productImg: img,
       productId: _id,
     };
 
