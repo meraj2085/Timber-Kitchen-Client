@@ -1,16 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Contexts/UserContext";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const SignIn = () => {
+  const {userSignIn} = useContext(AuthContext)
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+
+    userSignIn(email, password)
+      .then((result) => {
+        const user = result.user;
+        toast.success("Login successful");
+        form.reset();
+      })
+      .catch((err) => console.error(err.message));
   };
+
   return (
     <div className="flex flex-col items-center justify-center px-6 py-8 h-screen">
       <div className="w-full max-w-sm p-8 space-y-3 rounded-xl bg-gray-200 text-gray-800">
