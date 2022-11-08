@@ -12,7 +12,7 @@ const HpServices = ({ services }) => {
       </div>
       <div className="flex justify-center">
         <Link to="/services">
-          <button class="py-2 px-6 bg-transparent text-red-600 font-semibold border border-red-600 rounded hover:bg-red-600 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0">
+          <button className="py-2 px-6 bg-transparent text-red-600 font-semibold border border-red-600 rounded hover:bg-red-600 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0">
             See All
           </button>
         </Link>
