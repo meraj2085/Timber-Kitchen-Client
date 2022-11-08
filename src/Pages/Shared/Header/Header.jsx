@@ -1,12 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from '../../.././assets/logo.png'
+import logo from "../../.././assets/logo.png";
 
 const Header = () => {
   return (
     <header className="px-4 text-gray-800">
       <div className="container flex justify-between h-20 mx-auto">
-        <img className="sm:h-10 md:h-20" src={logo} alt="" />
+        <div className="flex">
+          <img className="sm:h-10 md:h-20" src={logo} alt="" />
+          <p className="flex items-center text-2xl">TimberKitchen</p>
+        </div>
         <ul className="items-stretch hidden space-x-3 md:flex">
           <li className="flex">
             <Link
@@ -40,7 +43,7 @@ const Header = () => {
               My reviews
             </Link>
           </li>
-          
+
           <li className="flex">
             <Link
               to="/addService"
