@@ -9,6 +9,7 @@ import SignIn from "../Pages/SignIn/SignIn";
 import SignUp from "../Pages/SignUp/SignUp";
 import PrivateRoute from "./PrivateRoute";
 import Blog from '../Pages/Blog/Blog';
+import EditReview from "../Pages/EditReview/EditReview";
 
 export const router = createBrowserRouter([
   {
@@ -54,6 +55,11 @@ export const router = createBrowserRouter([
       {
         path: '/blog',
         element: <Blog></Blog>
+      },
+      {
+        path: '/editReview/:id',
+        loader: ({params})=>fetch(`http://localhost:5000/review/${params.id}`),
+        element: <EditReview></EditReview>
       }
     ],
   },
