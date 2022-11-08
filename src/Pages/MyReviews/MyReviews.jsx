@@ -12,6 +12,7 @@ const MyReviews = () => {
       .then((data) => setReview(data));
   }, [user]);
 
+
   return (
     <div>
       <div className="text-center text-3xl mt-10">
@@ -21,7 +22,7 @@ const MyReviews = () => {
       </div>
       <div className="grid grid-cols-3 gap-5 mx-20 my-20">
         {reviews.map((review) => (
-          <MyReviewCard key={review._id} review={review}></MyReviewCard>
+          <MyReviewCard key={review._id} reviews={reviews} setReview={setReview} review={review}></MyReviewCard>
         ))}
       </div>
     </div>
