@@ -7,8 +7,8 @@ const ServiceDetails = () => {
 
   return (
     <div>
-      <div class="min-h-screen bg-slate-50">
-        <div className="pt-5">
+      <div class=" bg-slate-50">
+        <div className="pt-5 pb-14">
           <div class="relative max-w-md mx-auto xl:max-w-2xl min-w-0 break-words bg-white w-full  shadow-lg rounded-xl mt-16">
             <div class="card">
               <div class="card-header mx-4 -mt-6">
