@@ -45,7 +45,7 @@ const [toggle, setToggle] = useState(true)
   };
 
   useEffect(()=>{
-     fetch('http://localhost:5000/reviews')
+     fetch(`http://localhost:5000/reviews/${_id}`)
      .then(res => res.json())
      .then(data => setReviews(data))
   }, [toggle])
@@ -146,7 +146,7 @@ const [toggle, setToggle] = useState(true)
         )}
       </div>
       <div className="grid grid-cols-1 gap-5">
-        {reviews.map(review => <ReviewsCard key={review._id} review={review}></ReviewsCard>)}
+        {reviews?.map(review => <ReviewsCard key={review._id} review={review}></ReviewsCard>)}
       </div>
     </div>
   );
