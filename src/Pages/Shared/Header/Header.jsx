@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../.././assets/logo.png";
+import { AuthContext } from "../../../Contexts/UserContext";
 
 const Header = () => {
+  const { user } = useContext(AuthContext);
+  console.log(user);
+
   return (
     <header className="px-4 text-gray-800">
       <div className="container flex justify-between h-20 mx-auto">

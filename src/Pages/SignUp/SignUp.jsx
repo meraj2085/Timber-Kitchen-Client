@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Contexts/UserContext";
 
 const SignUp = () => {
+  const {createUser, updateUserProfile} = useContext(AuthContext);
+
      const handleSubmit = (event) => {
           event.preventDefault();
           const form = event.target;
@@ -9,7 +13,24 @@ const SignUp = () => {
           const email = form.email.value;
           const password = form.password.value;
           const photoURL = form.imageUrl.value;
-          console.log(name, email, password);
+          
+          createUser(email, password)
+          .then(result => {
+            const user = result.user;
+            handleUpdateProfile(name, photoURL)
+            form.reset()
+            toast.success('SignUp Successful')
+          })
+          .catch(err => console.error(err.message))
+        };
+
+        const handleUpdateProfile = (name, photoURL) => {
+          const profile = { displayName: name, photoURL: photoURL };
+          updateUserProfile(profile)
+            .then(() => {})
+            .catch((error) => {
+              console.error(error);
+            });
         };
 
   return (
