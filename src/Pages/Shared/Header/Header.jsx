@@ -62,7 +62,7 @@ const Header = () => {
             <>
               <li className="flex">
                 <Link
-                  to="/reviews"
+                  to="/myReviews"
                   className="flex items-center px-4  hover:text-orange-600"
                 >
                   My reviews

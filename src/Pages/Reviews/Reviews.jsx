@@ -16,10 +16,12 @@ const [toggle, setToggle] = useState(true)
     const message = form.review.value;
     const userName = user?.displayName;
     const userImg = user?.photoURL;
+    const email = user?.email;
     const review = {
       message,
       userName,
       userImg,
+      email,
       productName: name,
       productId: _id,
     };
