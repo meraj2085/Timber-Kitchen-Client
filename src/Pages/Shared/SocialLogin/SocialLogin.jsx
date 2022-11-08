@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../../Contexts/UserContext";
 
 const SocialLogin = () => {
+  const { googleSignIn } = useContext(AuthContext);
+  const handleUserGoogleLogin = ()=>{
+     googleSignIn()
+     .then(result => {
+          const user = result.user;
+          console.log(user);
+     })
+     .catch(err => console.error(err.message))
+  }
+  
   return (
     <div>
       <button
+      onClick={handleUserGoogleLogin}
         aria-label="Log in with Google"
         className="p-3 flex text-center rounded-sm"
       >
