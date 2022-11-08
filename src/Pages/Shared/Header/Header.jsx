@@ -1,11 +1,29 @@
 import React, { useContext } from "react";
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import logo from "../../.././assets/logo.png";
 import { AuthContext } from "../../../Contexts/UserContext";
 
 const Header = () => {
-  const { user } = useContext(AuthContext);
-  console.log(user);
+  const { user, userSignOut } = useContext(AuthContext);
+
+  const handleUserSignOut = () => {
+    userSignOut()
+      .then(() => {
+        toast(
+          "LogOut successful",
+          {
+            style: {
+              borderRadius: "10px",
+              background: "#333",
+              color: "#fff",
+            },
+          },
+          { duration: 2000 }
+        );
+      })
+      .catch((err) => console.log(err.message));
+  };
 
   return (
     <header className="px-4 text-gray-800">
@@ -59,13 +77,13 @@ const Header = () => {
                   Add Service
                 </Link>
               </li>
-              <li className="flex">
-                <Link
-                  to="/logOut"
+              <li className="flex cursor-pointer">
+                <p
+                  onClick={handleUserSignOut}
                   className="flex items-center px-4  hover:text-orange-600"
                 >
                   Log Out
-                </Link>
+                </p>
               </li>
             </>
           ) : (

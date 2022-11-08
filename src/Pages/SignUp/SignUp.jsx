@@ -20,7 +20,7 @@ const SignUp = () => {
             const user = result.user;
             handleUpdateProfile(name, photoURL)
             form.reset()
-            toast.success('SignUp Successful')
+            toast.success('SignUp Successful', {duration: 2000})
           })
           .catch(err => console.error(err.message))
         };

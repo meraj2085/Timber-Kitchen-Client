@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import toast from "react-hot-toast";
 import { AuthContext } from "../../../Contexts/UserContext";
 
 const SocialLogin = () => {
@@ -7,7 +8,7 @@ const SocialLogin = () => {
     googleSignIn()
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        toast.success('SignIn Successful', {duration: 2000})
       })
       .catch((err) => console.error(err.message));
   };
