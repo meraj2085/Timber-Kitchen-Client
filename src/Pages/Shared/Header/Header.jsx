@@ -39,47 +39,55 @@ const Header = () => {
               Blog
             </Link>
           </li>
-          <li className="flex">
-            <Link
-              to="/reviews"
-              className="flex items-center px-4  hover:text-orange-600"
-            >
-              My reviews
-            </Link>
-          </li>
 
-          <li className="flex">
-            <Link
-              to="/addService"
-              className="flex items-center px-4  hover:text-orange-600"
-            >
-              Add Service
-            </Link>
-          </li>
-          <li className="flex">
-            <Link
-              to="/signIn"
-              className="flex items-center px-4  hover:text-orange-600"
-            >
-              SignIn
-            </Link>
-          </li>
-          <li className="flex">
-            <Link
-              to="/signUp"
-              className="flex items-center px-4  hover:text-orange-600"
-            >
-              SignUp
-            </Link>
-          </li>
-          <li className="flex">
-            <Link
-              to="/logOut"
-              className="flex items-center px-4  hover:text-orange-600"
-            >
-              Log Out
-            </Link>
-          </li>
+          {user?.uid ? (
+            <>
+              <li className="flex">
+                <Link
+                  to="/reviews"
+                  className="flex items-center px-4  hover:text-orange-600"
+                >
+                  My reviews
+                </Link>
+              </li>
+
+              <li className="flex">
+                <Link
+                  to="/addService"
+                  className="flex items-center px-4  hover:text-orange-600"
+                >
+                  Add Service
+                </Link>
+              </li>
+              <li className="flex">
+                <Link
+                  to="/logOut"
+                  className="flex items-center px-4  hover:text-orange-600"
+                >
+                  Log Out
+                </Link>
+              </li>
+            </>
+          ) : (
+            <>
+              <li className="flex">
+                <Link
+                  to="/signIn"
+                  className="flex items-center px-4  hover:text-orange-600"
+                >
+                  SignIn
+                </Link>
+              </li>
+              <li className="flex">
+                <Link
+                  to="/signUp"
+                  className="flex items-center px-4  hover:text-orange-600"
+                >
+                  SignUp
+                </Link>
+              </li>
+            </>
+          )}
         </ul>
         <button className="flex justify-end p-4 md:hidden">
           <svg
