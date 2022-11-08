@@ -9,7 +9,7 @@ const ReviewsCard = ({ review }) => {
         <div className="space-y-2">
           <div className="flex">
             <img
-              className="w-10 h-10"
+              className="w-10 h-10 rounded-full"
               src={userImg}
               alt="User Img"
             />

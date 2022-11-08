@@ -6,6 +6,7 @@ import ReviewsCard from "./ReviewsCard";
 
 const Reviews = ({ service }) => {
 const [reviews, setReviews] = useState([])
+const [toggle, setToggle] = useState(true)
   const { name, _id } = service;
   const { user } = useContext(AuthContext);
 
@@ -33,6 +34,7 @@ const [reviews, setReviews] = useState([])
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
+          setToggle(!toggle)
           form.reset();
           toast.success("Review added", { duration: 2000 });
         }
@@ -43,7 +45,7 @@ const [reviews, setReviews] = useState([])
      fetch('http://localhost:5000/reviews')
      .then(res => res.json())
      .then(data => setReviews(data))
-  }, [])
+  }, [toggle])
 
   return (
     <div className="lg:flex justify-between mx-20 my-20">
