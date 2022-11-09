@@ -2,11 +2,10 @@
 
 ## Project Details
 
-In the project directory, you can run:
 
-### `Live Links:`
-## Client: 
-## Server: 
+## Live Links 
+### `Client:`
+### `Server:`
 
 ### `Details:`
 
