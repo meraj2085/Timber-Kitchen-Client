@@ -7,6 +7,7 @@ const MyReviews = () => {
   useTitle("My reviews");
   const { user, userSignOut } = useContext(AuthContext);
   const [reviews, setReview] = useState([]);
+  console.log(reviews);
 
   useEffect(() => {
     fetch(`http://localhost:5000/myReviews/?email=${user?.email}`, {
@@ -30,7 +31,7 @@ const MyReviews = () => {
           My <span className="text-orange-600">reviews</span>
         </h1>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:mx-20 mx-10 my-20">
+      {!reviews.length == 0 ? <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:mx-20 mx-10 my-20">
         {reviews.map((review) => (
           <MyReviewCard
             key={review._id}
@@ -39,7 +40,7 @@ const MyReviews = () => {
             review={review}
           ></MyReviewCard>
         ))}
-      </div>
+      </div> : <div className="h-screen flex justify-center pt-56"><p className="text-3xl">No reviews were added</p></div>}
     </div>
   );
 };
