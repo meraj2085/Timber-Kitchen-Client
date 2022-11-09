@@ -23,6 +23,7 @@ const [toggle, setToggle] = useState(true)
       userName,
       userImg,
       email,
+      timestamp: new Date(),
       productName: name,
       productImg: img,
       productId: _id,
