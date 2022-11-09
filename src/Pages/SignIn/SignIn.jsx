@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Contexts/UserContext";
@@ -7,8 +7,10 @@ import { token } from "../../utilities/token";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const SignIn = () => {
-  const {userSignIn} = useContext(AuthContext)
-  useTitle('SignIn')
+  const { userSignIn } = useContext(AuthContext);
+  const [error, setError] = useState(null);
+
+  useTitle("SignIn");
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -23,12 +25,13 @@ const SignIn = () => {
     userSignIn(email, password)
       .then((result) => {
         const user = result.user;
-        token(user)
+        token(user);
         navigate(from, { replace: true });
+        setError(null)
         toast.success("Login successful");
         form.reset();
       })
-      .catch((err) => console.error(err.message));
+      .catch((err) => setError(err.message));
   };
 
   return (
@@ -63,6 +66,16 @@ const SignIn = () => {
               placeholder="Password"
               className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-purple-600"
             />
+          </div>
+          <div className="text-red-600">
+            <p>
+              {error === "Firebase: Error (auth/user-not-found)." &&
+                "User Not Found"}
+            </p>
+            <p>
+              {error === "Firebase: Error (auth/wrong-password)." &&
+                "Wrong password"}
+            </p>
           </div>
 
           <div className="flex justify-center">
