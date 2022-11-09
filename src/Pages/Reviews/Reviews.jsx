@@ -3,10 +3,11 @@ import toast from "react-hot-toast";
 import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../../Contexts/UserContext";
 import ReviewsCard from "./ReviewsCard";
+import empty from "../../assets/undraw_no_data_re_kwbl.svg";
 
 const Reviews = ({ service }) => {
-const [reviews, setReviews] = useState([])
-const [toggle, setToggle] = useState(true)
+  const [reviews, setReviews] = useState([]);
+  const [toggle, setToggle] = useState(true);
   const { name, _id, img } = service;
   const { user } = useContext(AuthContext);
   const location = useLocation();
@@ -39,18 +40,18 @@ const [toggle, setToggle] = useState(true)
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          setToggle(!toggle)
+          setToggle(!toggle);
           form.reset();
           toast.success("Review added", { duration: 2000 });
         }
       });
   };
 
-  useEffect(()=>{
-     fetch(`http://localhost:5000/reviews/${_id}`)
-     .then(res => res.json())
-     .then(data => setReviews(data))
-  }, [toggle])
+  useEffect(() => {
+    fetch(`http://localhost:5000/reviews/${_id}`)
+      .then((res) => res.json())
+      .then((data) => setReviews(data));
+  }, [toggle]);
 
   return (
     <div className="lg:flex justify-between mx-20 my-20">
@@ -147,9 +148,17 @@ const [toggle, setToggle] = useState(true)
           </Link>
         )}
       </div>
-      <div className="grid grid-cols-1 gap-5">
-        {reviews?.map(review => <ReviewsCard key={review._id} review={review}></ReviewsCard>)}
-      </div>
+      {!reviews.length == 0 ? (
+        <div className="grid grid-cols-1 gap-5">
+          {reviews?.map((review) => (
+            <ReviewsCard key={review._id} review={review}></ReviewsCard>
+          ))}
+        </div>
+      ) : (
+        <div className="flex md:justify-end justify-center">
+          <img className="md:w-1/2 w-3/4" src={empty} alt="" />
+        </div>
+      )}
     </div>
   );
 };
