@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import cooking from "../../assets/undraw_cooking.svg";
 import useTitle from "../../hooks/useTitle";
 import Steps from "../Steps/Steps";
+import WhyChoose from "../WhyChoose/WhyChoose";
 import HpServices from "./HpServices/HpServices";
 
 const Home = () => {
@@ -36,6 +37,7 @@ const Home = () => {
       </div>
       <HpServices services={services}></HpServices>
       <Steps></Steps>
+      <WhyChoose></WhyChoose>
     </div>
   );
 };
