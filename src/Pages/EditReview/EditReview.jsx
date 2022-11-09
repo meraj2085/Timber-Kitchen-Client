@@ -28,8 +28,8 @@ const EditReview = () => {
   };
 
   return (
-    <div className="flex justify-center my-20">
-      <form className="w-1/2" onSubmit={handleReview}>
+    <div className="flex justify-center mx-10 my-20">
+      <form className="md:w-1/2 w-full" onSubmit={handleReview}>
         <textarea
           name="review"
           id="message"
