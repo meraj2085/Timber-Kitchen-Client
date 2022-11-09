@@ -2,10 +2,12 @@ import React, { useContext } from "react";
 import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Contexts/UserContext";
+import useTitle from "../../hooks/useTitle";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const SignIn = () => {
   const {userSignIn} = useContext(AuthContext)
+  useTitle('SignIn')
 
   const navigate = useNavigate();
   const location = useLocation();

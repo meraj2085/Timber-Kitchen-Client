@@ -2,10 +2,12 @@ import React, { useContext } from "react";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/UserContext";
+import useTitle from "../../hooks/useTitle";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const SignUp = () => {
   const {createUser, updateUserProfile} = useContext(AuthContext);
+  useTitle('SignUp')
 
      const handleSubmit = (event) => {
           event.preventDefault();

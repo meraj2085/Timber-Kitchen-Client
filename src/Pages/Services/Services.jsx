@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import useTitle from "../../hooks/useTitle";
 import ServiceCard from "../Shared/ServiceCard/ServiceCard";
 import Spinner from "../Shared/Spinner/Spinner";
 
 const Services = () => {
+  useTitle('Services')
   const [loading, setLoading] = useState(true)
   const [services, setServices] = useState([]);
   useEffect(() => {

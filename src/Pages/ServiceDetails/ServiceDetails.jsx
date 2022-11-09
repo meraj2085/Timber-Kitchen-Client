@@ -1,11 +1,12 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import useTitle from "../../hooks/useTitle";
 import Reviews from "../Reviews/Reviews";
 
 const ServiceDetails = () => {
   const service = useLoaderData();
   const { img, name, details, _id, price } = service;
-
+ useTitle('Details')
   return (
     <div>
       <div className=" bg-slate-50">
