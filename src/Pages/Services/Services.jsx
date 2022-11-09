@@ -4,7 +4,6 @@ import ServiceCard from "../Shared/ServiceCard/ServiceCard";
 import Spinner from "../Shared/Spinner/Spinner";
 
 const Services = () => {
-  // const services = useLoaderData();
   const [loading, setLoading] = useState(true)
   const [services, setServices] = useState([]);
   useEffect(() => {
