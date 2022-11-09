@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import toast from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Contexts/UserContext";
 import useTitle from "../../hooks/useTitle";
 import { token } from "../../utilities/token";
@@ -9,6 +9,7 @@ import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 const SignUp = () => {
   const {createUser, updateUserProfile} = useContext(AuthContext);
   useTitle('SignUp')
+  const navigate = useNavigate()
 
      const handleSubmit = (event) => {
           event.preventDefault();
@@ -24,6 +25,7 @@ const SignUp = () => {
             token(user)
             handleUpdateProfile(name, photoURL)
             form.reset()
+            navigate('/')
             toast.success('SignUp Successful', {duration: 2000})
           })
           .catch(err => console.error(err.message))
