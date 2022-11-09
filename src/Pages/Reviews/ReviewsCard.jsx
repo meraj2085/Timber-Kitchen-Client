@@ -4,7 +4,7 @@ const ReviewsCard = ({ review }) => {
   const { _id, message, userName, userImg, productName, productId } = review;
 
   return (
-    <div className="max-w-lg p-4 shadow-md bg-gray-50 text-gray-800">
+    <div className="w-xl md:w-[500px] p-4 max-h-[150px] overflow-y-scroll shadow-md bg-gray-50 text-gray-800">
       <div className="space-y-4">
         <div className="space-y-2">
           <div className="flex">

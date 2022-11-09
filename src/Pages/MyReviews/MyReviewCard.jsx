@@ -33,7 +33,7 @@ const MyReviewCard = ({ review, reviews, setReview }) => {
   };
 
   return (
-    <div className="max-w-lg px-4 py-6 shadow-md bg-gray-50 text-gray-800">
+    <div className="max-w-lg max-h-[200px] overflow-y-scroll px-4 py-6 shadow-md bg-gray-50 text-gray-800">
       <div className="space-y-4">
         <div className="space-y-2">
           <div className="flex justify-between">
