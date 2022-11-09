@@ -5,14 +5,14 @@ import ServiceCard from "../Shared/ServiceCard/ServiceCard";
 import Spinner from "../Shared/Spinner/Spinner";
 
 const Services = () => {
-  useTitle('Services')
-  const [loading, setLoading] = useState(true)
+  useTitle("Services");
+  const [loading, setLoading] = useState(true);
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/allServices")
+    fetch("https://timber-kitchen-server.vercel.app/allServices")
       .then((res) => res.json())
       .then((data) => {
-        setLoading(false)
+        setLoading(false);
         setServices(data);
       });
   }, []);
@@ -21,10 +21,10 @@ const Services = () => {
     <div>
       {loading && <Spinner></Spinner>}
       <div className="grid grid-cols-1 md:grid-cols-3 my-16 gap-10  md:mx-36 mx-10">
-      {services.map((service) => (
-        <ServiceCard key={service._id} service={service}></ServiceCard>
-      ))}
-    </div>
+        {services.map((service) => (
+          <ServiceCard key={service._id} service={service}></ServiceCard>
+        ))}
+      </div>
     </div>
   );
 };

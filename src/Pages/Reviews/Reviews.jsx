@@ -30,7 +30,7 @@ const Reviews = ({ service }) => {
       productId: _id,
     };
 
-    fetch("http://localhost:5000/addReviews", {
+    fetch("https://timber-kitchen-server.vercel.app/addReviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -48,7 +48,7 @@ const Reviews = ({ service }) => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews/${_id}`)
+    fetch(`https://timber-kitchen-server.vercel.app/reviews/${_id}`)
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, [toggle]);

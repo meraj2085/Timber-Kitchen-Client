@@ -3,16 +3,16 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import useTitle from "../../hooks/useTitle";
 
 const EditReview = () => {
-  useTitle('Edit review')
+  useTitle("Edit review");
   const review = useLoaderData();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleReview = (event) => {
     event.preventDefault();
     const form = event.target;
     const message = form.review.value;
 
-    fetch(`http://localhost:5000/review/${review?._id}`, {
+    fetch(`https://timber-kitchen-server.vercel.app/review/${review?._id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -22,7 +22,7 @@ const EditReview = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data?.modifiedCount > 0) {
-          navigate('/myReviews')
+          navigate("/myReviews");
         }
       });
   };

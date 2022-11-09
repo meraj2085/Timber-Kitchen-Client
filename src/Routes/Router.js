@@ -20,7 +20,8 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        loader: () => fetch("http://localhost:5000/services"),
+        loader: () =>
+          fetch("https://timber-kitchen-server.vercel.app/services"),
         element: <Home></Home>,
       },
       {
@@ -38,7 +39,9 @@ export const router = createBrowserRouter([
       {
         path: "/services/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/${params.id}`),
+          fetch(
+            `https://timber-kitchen-server.vercel.app/services/${params.id}`
+          ),
         element: <ServiceDetails></ServiceDetails>,
       },
       {
@@ -64,7 +67,7 @@ export const router = createBrowserRouter([
       {
         path: "/editReview/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/review/${params.id}`),
+          fetch(`https://timber-kitchen-server.vercel.app/review/${params.id}`),
         element: <EditReview></EditReview>,
       },
     ],

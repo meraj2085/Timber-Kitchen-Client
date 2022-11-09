@@ -16,14 +16,14 @@ const MyReviewCard = ({ review, reviews, setReview }) => {
   const handleReviewDelete = (id) => {
     const agree = window.confirm("Are you sure you want to delete?");
     if (agree) {
-      fetch(`http://localhost:5000/reviews/${id}`, {
+      fetch(`https://timber-kitchen-server.vercel.app/reviews/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount > 0) {
-            const remaining = reviews.filter(rev => rev._id !== id)
-            setReview(remaining)
+            const remaining = reviews.filter((rev) => rev._id !== id);
+            setReview(remaining);
             toast.success("Deleted successfully", {
               duration: 2000,
             });
@@ -65,20 +65,20 @@ const MyReviewCard = ({ review, reviews, setReview }) => {
               <p className="mx-5">|</p>
               <div>
                 <Link to={`/editReview/${_id}`}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
-                  />
-                </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-6 h-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
+                    />
+                  </svg>
                 </Link>
               </div>
             </div>

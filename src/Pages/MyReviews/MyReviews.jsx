@@ -9,14 +9,16 @@ const MyReviews = () => {
   const { user, userSignOut } = useContext(AuthContext);
   const [loading, setLoading] = useState(true);
   const [reviews, setReview] = useState([]);
-  console.log(reviews);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myReviews/?email=${user?.email}`, {
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("TimberKitchenToken")}`,
-      },
-    })
+    fetch(
+      `https://timber-kitchen-server.vercel.app/myReviews/?email=${user?.email}`,
+      {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("TimberKitchenToken")}`,
+        },
+      }
+    )
       .then((res) => {
         if (res.status === 401 || res.status === 403) {
           return userSignOut();
@@ -24,7 +26,7 @@ const MyReviews = () => {
         return res.json();
       })
       .then((data) => {
-        setLoading(false)
+        setLoading(false);
         setReview(data);
       });
   }, [user]);

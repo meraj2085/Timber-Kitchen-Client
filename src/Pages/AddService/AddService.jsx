@@ -3,7 +3,7 @@ import toast from "react-hot-toast";
 import useTitle from "../../hooks/useTitle";
 
 const AddService = () => {
-  useTitle('Add service')
+  useTitle("Add service");
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -11,9 +11,9 @@ const AddService = () => {
     const img = form.img.value;
     const price = form.price.value;
     const details = form.details.value;
-    const service = {name, img, price, details}
+    const service = { name, img, price, details };
 
-    fetch("http://localhost:5000/addService", {
+    fetch("https://timber-kitchen-server.vercel.app/addService", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -28,7 +28,7 @@ const AddService = () => {
         }
       });
   };
-  
+
   return (
     <div>
       <form className="md:mx-[400px] mx-10 my-20" onSubmit={handleSubmit}>
@@ -48,7 +48,7 @@ const AddService = () => {
             Name
           </label>
         </div>
-        
+
         <div className="grid md:grid-cols-2 md:gap-6">
           <div className="relative z-0 mb-6 w-full group">
             <input
@@ -67,21 +67,21 @@ const AddService = () => {
             </label>
           </div>
           <div className="relative z-0 mb-6 w-full group">
-          <input
-            type="text"
-            name="img"
-            id="imgURL"
-            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            placeholder=" "
-            required
-          />
-          <label
-            htmlFor="imgURL"
-            className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-          >
-            Photo URL
-          </label>
-        </div>
+            <input
+              type="text"
+              name="img"
+              id="imgURL"
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+            />
+            <label
+              htmlFor="imgURL"
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              Photo URL
+            </label>
+          </div>
         </div>
         <div className="relative z-0 mb-6 w-full group">
           <input
