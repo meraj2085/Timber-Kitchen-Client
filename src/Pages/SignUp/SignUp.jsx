@@ -3,6 +3,7 @@ import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/UserContext";
 import useTitle from "../../hooks/useTitle";
+import { token } from "../../utilities/token";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const SignUp = () => {
@@ -20,6 +21,7 @@ const SignUp = () => {
           createUser(email, password)
           .then(result => {
             const user = result.user;
+            token(user)
             handleUpdateProfile(name, photoURL)
             form.reset()
             toast.success('SignUp Successful', {duration: 2000})

@@ -15,8 +15,8 @@ const MyReviews = () => {
       },
     })
       .then((res) => {
-        if(res.status === 401 || res.status === 403){
-          return userSignOut()
+        if (res.status === 401 || res.status === 403) {
+          return userSignOut();
         }
         return res.json();
       })
