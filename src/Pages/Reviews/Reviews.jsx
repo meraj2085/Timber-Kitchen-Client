@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../../Contexts/UserContext";
 import ReviewsCard from "./ReviewsCard";
 
@@ -9,6 +9,7 @@ const [reviews, setReviews] = useState([])
 const [toggle, setToggle] = useState(true)
   const { name, _id, img } = service;
   const { user } = useContext(AuthContext);
+  const location = useLocation();
 
   const handleReview = (event) => {
     event.preventDefault();
@@ -140,7 +141,7 @@ const [toggle, setToggle] = useState(true)
             </form>
           </>
         ) : (
-          <Link to="/signIn">
+          <Link to="/signIn" state={{ from: location }} replace>
             <p className="hover:underline">Please signIn to add review.</p>
           </Link>
         )}
