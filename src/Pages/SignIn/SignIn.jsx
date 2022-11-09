@@ -3,6 +3,7 @@ import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Contexts/UserContext";
 import useTitle from "../../hooks/useTitle";
+import { token } from "../../utilities/token";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const SignIn = () => {
@@ -22,6 +23,7 @@ const SignIn = () => {
     userSignIn(email, password)
       .then((result) => {
         const user = result.user;
+        token(user)
         navigate(from, { replace: true });
         toast.success("Login successful");
         form.reset();

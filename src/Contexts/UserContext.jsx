@@ -31,6 +31,7 @@ const UserContext = ({ children }) => {
     return signInWithPopup(auth, googleProvider);
   };
   const userSignOut = () => {
+    localStorage.removeItem('TimberKitchenToken')
     return signOut(auth);
   };
   const userSignIn = (email, password)=>{

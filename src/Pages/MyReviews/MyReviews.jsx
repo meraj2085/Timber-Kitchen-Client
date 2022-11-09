@@ -4,13 +4,22 @@ import useTitle from "../../hooks/useTitle";
 import MyReviewCard from "./MyReviewCard";
 
 const MyReviews = () => {
-  useTitle('My reviews')
-  const { user } = useContext(AuthContext);
+  useTitle("My reviews");
+  const { user, userSignOut } = useContext(AuthContext);
   const [reviews, setReview] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myReviews/?email=${user?.email}`)
-      .then((res) => res.json())
+    fetch(`http://localhost:5000/myReviews/?email=${user?.email}`, {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("TimberKitchenToken")}`,
+      },
+    })
+      .then((res) => {
+        if(res.status === 401 || res.status === 403){
+          return userSignOut()
+        }
+        return res.json();
+      })
       .then((data) => setReview(data));
   }, [user]);
 
