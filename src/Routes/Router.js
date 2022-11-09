@@ -8,7 +8,7 @@ import Services from "../Pages/Services/Services";
 import SignIn from "../Pages/SignIn/SignIn";
 import SignUp from "../Pages/SignUp/SignUp";
 import PrivateRoute from "./PrivateRoute";
-import Blog from '../Pages/Blog/Blog';
+import Blog from "../Pages/Blog/Blog";
 import EditReview from "../Pages/EditReview/EditReview";
 
 export const router = createBrowserRouter([
@@ -49,18 +49,23 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: '/myReviews',
-        element: <MyReviews></MyReviews>
+        path: "/myReviews",
+        element: (
+          <PrivateRoute>
+            <MyReviews></MyReviews>
+          </PrivateRoute>
+        ),
       },
       {
-        path: '/blog',
-        element: <Blog></Blog>
+        path: "/blog",
+        element: <Blog></Blog>,
       },
       {
-        path: '/editReview/:id',
-        loader: ({params})=>fetch(`http://localhost:5000/review/${params.id}`),
-        element: <EditReview></EditReview>
-      }
+        path: "/editReview/:id",
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/review/${params.id}`),
+        element: <EditReview></EditReview>,
+      },
     ],
   },
 ]);
