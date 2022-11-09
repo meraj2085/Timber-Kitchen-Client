@@ -30,7 +30,7 @@ const MyReviews = () => {
           My <span className="text-orange-600">reviews</span>
         </h1>
       </div>
-      <div className="grid grid-cols-31 md:grid-cols-3 gap-5 mx-20 my-20">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:mx-20 mx-10 my-20">
         {reviews.map((review) => (
           <MyReviewCard
             key={review._id}
