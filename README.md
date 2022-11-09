@@ -2,12 +2,9 @@
 
 ## Project Details
 
+### `Client live link:`
+### `Server live link:`
 
-## Live Links 
-### `Client:`
-### `Server:`
-
-### `Details:`
 
 - Project Name: Timber Kitchen
 - About: My client provides single service on food.
