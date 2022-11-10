@@ -144,7 +144,12 @@ const Reviews = ({ service }) => {
           </>
         ) : (
           <Link to="/signIn" state={{ from: location }} replace>
-            <p className="hover:underline">Please signIn to add review.</p>
+            <div className="flex my-10">
+              <p className="mx-2 text-teal-600 font-semibold">!</p>
+              <p className="hover:underline hover:text-teal-600">
+                Please signIn to add review.
+              </p>
+            </div>
           </Link>
         )}
       </div>
