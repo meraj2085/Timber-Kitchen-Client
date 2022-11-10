@@ -12,3 +12,4 @@
 - This is a fullstack website
 - This project contains database that can be used to create, read, update and delete 
 - User can give review to any product
+- This site is mobile and tablet responsive.
