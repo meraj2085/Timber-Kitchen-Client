@@ -14,8 +14,8 @@ const WhyChoose = () => {
           <div className="flex-1 h-px sm:w-16 bg-gray-300"></div>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-4 md:mx-64 mx-36 gap-10 my-10">
-        <div className="max-w-[200px] max-h-[200px] p-6 rounded-md shadow-md bg-gray-50 text-gray-900 hover:text-white hover:bg-purple-400">
+      <div className="grid grid-cols-1 md:grid-cols-4 lg:mx-64 md:mx-10 gap-10 my-10 mx-16">
+        <div className="lg:max-w-[200px] max-w-lg max-h-[200px] p-6 rounded-md shadow-md bg-gray-50 text-gray-900 hover:text-white hover:bg-purple-400">
           <div className="flex justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +38,7 @@ const WhyChoose = () => {
             </h2>
           </div>
         </div>
-        <div className="max-w-[200px] max-h-[200px] p-6 rounded-md shadow-md bg-gray-50 text-gray-900 hover:text-white hover:bg-purple-400">
+        <div className="lg:max-w-[200px] max-w-lg max-h-[200px] p-6 rounded-md shadow-md bg-gray-50 text-gray-900 hover:text-white hover:bg-purple-400">
           <div className="flex justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +61,7 @@ const WhyChoose = () => {
             </h2>
           </div>
         </div>
-        <div className="max-w-[200px] max-h-[200px] p-6 rounded-md shadow-md hover:text-white hover:bg-purple-400 text-gray-900 ">
+        <div className="lg:max-w-[200px] max-w-lg max-h-[200px] p-6 rounded-md shadow-md hover:text-white hover:bg-purple-400 text-gray-900 ">
           <div className="flex justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +84,7 @@ const WhyChoose = () => {
             </h2>
           </div>
         </div>
-        <div className="max-w-[200px] max-h-[200px] p-6 rounded-md shadow-md bg-gray-50 text-gray-900 hover:text-white hover:bg-purple-400">
+        <div className="lg:max-w-[200px] max-w-lg max-h-[200px] p-6 rounded-md shadow-md bg-gray-50 text-gray-900 hover:text-white hover:bg-purple-400">
           <div className="flex justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"

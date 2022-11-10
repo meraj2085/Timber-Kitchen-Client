@@ -31,7 +31,7 @@ const AddService = () => {
 
   return (
     <div>
-      <form className="md:mx-[400px] mx-10 my-20" onSubmit={handleSubmit}>
+      <form className="lg:mx-[400px] md:mx-[100px] mx-10 my-20" onSubmit={handleSubmit}>
         <div className="relative z-0 mb-6 w-full group">
           <input
             type="text"
