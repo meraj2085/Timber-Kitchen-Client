@@ -31,9 +31,12 @@ const MyReviews = () => {
       });
   }, [user]);
 
+  
+  if (loading) {
+    return <Spinner />;
+  }
   return (
     <div>
-      {loading && <Spinner></Spinner>}
       <div className="text-center text-3xl mt-10">
         <h1>
           My <span className="text-orange-600">reviews</span>
