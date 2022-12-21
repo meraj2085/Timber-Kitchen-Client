@@ -2,7 +2,7 @@ import React from "react";
 
 const WhyChoose = () => {
   return (
-    <div>
+    <div className="mb-20">
       <div className="p-4 mx-auto text-center md:px-10 lg:px-32 xl:max-w-3xl">
         <h2 className="text-2xl font-bold leading-none sm:text-4xl">
           Why choose me?

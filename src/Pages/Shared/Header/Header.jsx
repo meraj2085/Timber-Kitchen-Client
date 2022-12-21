@@ -52,10 +52,10 @@ const Header = () => {
           </li>
           <li className="flex">
             <Link
-              to="/blog"
+              to="/dashboard"
               className="flex items-center px-4  hover:text-orange-600"
             >
-              Blog
+              Dashboard
             </Link>
           </li>
 
@@ -180,13 +180,12 @@ const Header = () => {
                   </li>
                   <li className="flex">
                     <Link
-                      to="/blog"
+                      to="/dashboard"
                       className="flex items-center px-4  hover:text-orange-600"
                     >
-                      Blog
+                      Dashboard
                     </Link>
                   </li>
-
                   {user?.uid ? (
                     <>
                       <li className="flex">

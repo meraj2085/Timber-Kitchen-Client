@@ -4,9 +4,9 @@ import Logo from "../../../assets/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="p-4 sm:p-6 dark:bg-gray-900">
-      <hr className="my-6 border-gray-200 dark:border-gray-700" />
-      <div className="md:flex md:justify-between">
+    <footer>
+      <hr className="mb-6 border-gray-200 dark:border-gray-700" />
+      <div className="md:flex md:justify-between p-6">
         <div className="mb-6 md:mb-0">
           <Link to="/">
             <img src={Logo} className="mr-3 h-16" alt="TimberKitchen Logo" />
@@ -66,7 +66,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="mt-12 sm:flex sm:items-center sm:justify-between">
+      <div className="mt-12 sm:flex sm:items-center sm:justify-between p-6">
         <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
           © 2022{" "}
           <a href="https://flowbite.com/" className="hover:underline">

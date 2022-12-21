@@ -8,9 +8,9 @@ import Services from "../Pages/Services/Services";
 import SignIn from "../Pages/SignIn/SignIn";
 import SignUp from "../Pages/SignUp/SignUp";
 import PrivateRoute from "./PrivateRoute";
-import Blog from "../Pages/Blog/Blog";
 import EditReview from "../Pages/EditReview/EditReview";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import Dashboard from "../Pages/Dashboard/Dashboard";
 
 export const router = createBrowserRouter([
   {
@@ -37,6 +37,10 @@ export const router = createBrowserRouter([
         element: <Services></Services>,
       },
       {
+        path: "/dashboard",
+        element: <Dashboard></Dashboard>,
+      },
+      {
         path: "/services/:id",
         loader: ({ params }) =>
           fetch(
@@ -59,10 +63,6 @@ export const router = createBrowserRouter([
             <MyReviews></MyReviews>
           </PrivateRoute>
         ),
-      },
-      {
-        path: "/blog",
-        element: <Blog></Blog>,
       },
       {
         path: "/editReview/:id",
