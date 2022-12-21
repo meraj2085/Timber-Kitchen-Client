@@ -11,7 +11,7 @@ const Home = () => {
   useTitle('Home')
   return (
     <div>
-      <div className="px-4 py-16 mx-auto min-h-screen sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+      <div className="px-4 pt-16 mx-auto min-h-screen sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pt-20">
         <div className="flex flex-col items-center justify-between w-full mb-10 lg:flex-row">
           <div className="mb-16 lg:mb-0 lg:max-w-lg lg:pr-5">
             <div className="mb-6">

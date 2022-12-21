@@ -1,6 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
-import AddService from "../Pages/AddService/AddService";
 import Home from "../Pages/Home/Home";
 import MyReviews from "../Pages/MyReviews/MyReviews";
 import ServiceDetails from "../Pages/ServiceDetails/ServiceDetails";
@@ -10,7 +9,10 @@ import SignUp from "../Pages/SignUp/SignUp";
 import PrivateRoute from "./PrivateRoute";
 import EditReview from "../Pages/EditReview/EditReview";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
-import Dashboard from "../Pages/Dashboard/Dashboard";
+import Dashboard from "../Layout/DashboardLayout";
+import DashboardLayout from "../Layout/DashboardLayout";
+import AddService from "../Pages/DashboardPages/AddService";
+import AllProducts from "../Pages/DashboardPages/AllProducts";
 
 export const router = createBrowserRouter([
   {
@@ -48,14 +50,7 @@ export const router = createBrowserRouter([
           ),
         element: <ServiceDetails></ServiceDetails>,
       },
-      {
-        path: "/addService",
-        element: (
-          <PrivateRoute>
-            <AddService></AddService>
-          </PrivateRoute>
-        ),
-      },
+      
       {
         path: "/myReviews",
         element: (
@@ -72,4 +67,26 @@ export const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: '/dashboard',
+    element: <DashboardLayout></DashboardLayout>,
+    children: [
+      {
+        path: "/dashboard",
+        element: (
+          <PrivateRoute>
+            <AddService></AddService>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/allProducts",
+        element: (
+          <PrivateRoute>
+            <AllProducts></AllProducts>
+          </PrivateRoute>
+        ),
+      },
+    ]
+  }
 ]);

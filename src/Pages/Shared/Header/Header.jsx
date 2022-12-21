@@ -69,15 +69,6 @@ const Header = () => {
                   My reviews
                 </Link>
               </li>
-
-              <li className="flex">
-                <Link
-                  to="/addService"
-                  className="flex items-center px-4  hover:text-orange-600"
-                >
-                  Add Service
-                </Link>
-              </li>
               <li className="flex cursor-pointer">
                 <p
                   onClick={handleUserSignOut}
@@ -194,15 +185,6 @@ const Header = () => {
                           className="flex items-center px-4  hover:text-orange-600"
                         >
                           My reviews
-                        </Link>
-                      </li>
-
-                      <li className="flex">
-                        <Link
-                          to="/addService"
-                          className="flex items-center px-4  hover:text-orange-600"
-                        >
-                          Add Service
                         </Link>
                       </li>
                       <li className="flex cursor-pointer">
